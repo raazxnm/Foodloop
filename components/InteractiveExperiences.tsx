@@ -18,7 +18,7 @@ export function InteractiveExperiences(){
   <section className="meal-journey-section" id="how-it-works">
    <div className="container">
     <div className="experience-heading">
-     <div className="eyebrow warm-eyebrow">DON&apos;T JUST READ ABOUT IT. FOLLOW THE JOURNEY.</div>
+    <div className="eyebrow warm-eyebrow">DON&apos;T JUST READ ABOUT IT. FOLLOW THE JOURNEY.</div>
      <h2>One meal. Four moments.<br/><em>A chain of care.</em></h2>
      <p>Explore how a surplus meal can move from a kitchen to a community through a safer, more thoughtful process.</p>
     </div>

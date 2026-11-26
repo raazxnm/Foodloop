@@ -5,3 +5,11 @@ out
 .env.local
 .env.*.local
 .DS_Store
+
+# Python
+ai-service/venv/
+ai-service/__pycache__/
+*.py[cod]
+
+# TypeScript
+*.tsbuildinfo

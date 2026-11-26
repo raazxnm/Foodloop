@@ -183,7 +183,7 @@ async function submitApplication(e: FormEvent) {
           <div className="eyebrow">TRUST AND ACCOUNTABILITY</div>
           <h1>Verification <em>centre.</em></h1>
           <p>
-            Submit official documents to establish your organisation&apos;s
+           Submit official documents to establish your organisation&apos;s
             identity and build trust within FoodLoop.
           </p>
         </div>
@@ -235,7 +235,7 @@ async function submitApplication(e: FormEvent) {
 
             {status === "suspended" && (
               <div className="form-error">
-                Your organisation&apos;s verification has been suspended.
+Your organisation&apos;s verification has been suspended.
                 Contact FoodLoop administration for assistance.
               </div>
             )}

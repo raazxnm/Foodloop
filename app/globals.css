@@ -156,3 +156,38 @@ body{background:#fff9ef;color:#321d20;font-family:Arial,"Noto Sans Devanagari",s
 .profile-avatar{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;background:#f9e5c8;color:#b84c32}.profile-summary h2{font:700 22px Georgia,serif;color:#632632;margin:15px 0 5px}.profile-role{display:inline-block;border-radius:20px;padding:6px 10px;background:#f8ead7;color:#a34c2d;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.7px}.profile-summary>p{font-size:11px;color:#90796c;margin:13px 0 20px}.profile-status{display:flex;gap:10px;padding:13px;background:#f8f1e4;border-radius:8px;color:#b45a30}.profile-status span{display:flex;flex-direction:column;gap:4px}.profile-status b{font-size:11px;color:#69343a}.profile-status small,.profile-org small{font-size:9px;line-height:1.5;color:#927d70}.profile-org{display:flex;flex-direction:column;gap:5px;padding-top:17px;margin-top:17px;border-top:1px solid #efdfcc;color:#6d3038;font-size:12px;text-transform:capitalize}
 .profile-edit h2{font:700 20px Georgia,serif;color:#632632;margin:0 0 20px}.profile-edit label{display:flex;flex-direction:column;gap:7px;font-size:11px;font-weight:700;color:#71554c;margin-bottom:14px}.profile-edit input,.profile-edit textarea{border:1px solid #e7d6c5;border-radius:7px;background:#fffaf3;padding:12px;color:#3c2927;font:inherit;font-weight:400}.profile-edit input:disabled{background:#f3eee7;color:#9a8c82}
 @media(max-width:650px){.account-card .role-picker{grid-template-columns:1fr}.role-choice{flex-direction:row;align-items:center}.role-choice small{margin-left:auto}.profile-layout{grid-template-columns:1fr}.profile-heading h1{font-size:39px}}
+.smartmatch-panel {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.smartmatch-results {
+  margin-top: 16px;
+  padding: 16px;
+  border: 1px solid #d8e7d7;
+  border-radius: 12px;
+  background: #f7faf5;
+}
+
+.smartmatch-results h4 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.smartmatch-result {
+  padding: 12px;
+  margin-top: 10px;
+  background: white;
+  border: 1px solid #e1e8dc;
+  border-radius: 9px;
+}
+
+.smartmatch-result ul {
+  margin: 10px 0 0 20px;
+  font-size: 13px;
+}
+
+.smartmatch-result li {
+  margin-bottom: 5px;
+}

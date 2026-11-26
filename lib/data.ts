@@ -84,9 +84,9 @@ export async function getDonations(user: AppUser): Promise<Donation[]> {
       .select("*")
       .order("created_at", { ascending: false });
 
-    q = user.role === "donor"
-      ? q.eq("donor_id", user.id)
-      : q.eq("status", "listed");
+   q = user.role === "donor"
+  ? q.eq("donor_id", user.id)
+  : q.eq("status", "listed").gt("safe_until", new Date().toISOString());
 
     const { data, error } = await q;
 
