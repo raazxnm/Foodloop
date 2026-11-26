@@ -1,0 +1,1 @@
+"use client";import {useAuth} from "@/components/AuthProvider";export function ModeNotice(){const{mode}=useAuth();return mode==="demo"?<div className="demo-notice"><b>DEMO MODE</b> Data is saved in this browser only. Connect Supabase for real accounts and shared records.</div>:null}

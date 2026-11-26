@@ -1,0 +1,3 @@
+import type { Metadata } from "next"; import "./globals.css"; import { AuthProvider } from "@/components/AuthProvider";
+export const metadata: Metadata={title:"FoodLoop India | Every Meal Deserves a Purpose",description:"FoodLoop connects surplus food with verified community partners, with safety, dignity and accountability at its heart."};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body><AuthProvider>{children}</AuthProvider></body></html>}
