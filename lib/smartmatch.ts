@@ -2,7 +2,7 @@
 import { supabase, isSupabaseConfigured } from "@/lib/supabase";
 import type { Donation } from "@/lib/types";
 
-const API_URL = process.env.NEXT_PUBLIC_SMARTMATCH_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_SMARTMATCH_API_URL?.replace(/\/+$/, "");
 
 export type SmartMatchResult = {
   organization_id: string;
@@ -33,30 +33,44 @@ export async function getSmartMatches(donation: Donation) {
     "get_verified_smartmatch_organizations"
   );
 
-  if (error) throw error;
+  if (error) {
+    throw new Error(`Supabase error: ${error.message}`);
+  }
 
-  const eligibleOrganizations = (organizations || []) as SmartMatchOrganization[];
+  const eligibleOrganizations =
+    (organizations || []) as SmartMatchOrganization[];
 
-  const response = await fetch(`${API_URL}/match`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      donation: {
-        id: donation.id,
-        city: donation.city,
-        state: donation.state,
-        food_type: donation.food_type,
-        quantity: donation.quantity,
-        safe_until: donation.safe_until
+  let response: Response;
+
+  try {
+    response = await fetch(`${API_URL}/match`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
       },
-      organizations: eligibleOrganizations
-    })
-  });
+      body: JSON.stringify({
+        donation: {
+          id: donation.id,
+          city: donation.city,
+          state: donation.state,
+          food_type: donation.food_type,
+          quantity: donation.quantity,
+          safe_until: donation.safe_until
+        },
+        organizations: eligibleOrganizations
+      })
+    });
+  } catch (error) {
+    throw new Error(
+      `Could not connect to SmartMatch API: ${
+        error instanceof Error ? error.message : "Unknown network error"
+      }`
+    );
+  }
 
   if (!response.ok) {
-    throw new Error("SmartMatch could not generate recommendations.");
+    const details = await response.text();
+    throw new Error(`SmartMatch API error ${response.status}: ${details}`);
   }
 
   const result = await response.json();
